@@ -1,0 +1,40 @@
+<ion-menu side="start" type="push" contentId="content">
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+    <ion-content>
+      <!-- <div *ngFor="let page of pages">
+          <ion-item [routerLink]="page.url" routerDirection="root" routerLinkActive="active">
+              <ion-icon [name]="page.icon" slot="start"></ion-icon>
+              <ion-label>{{ page.title }}</ion-label>
+            </ion-item>
+      </div> -->
+
+      <!-- <ion-list *ngFor="let page of pages">
+        {{ page | json }}
+        <ion-menu-toggle *ngIf="page.url">
+          <ion-item [routerLink]="page.url" routerDirection="root">
+            <ion-icon [name]="page.icon" slot="start"></ion-icon>
+            <ion-label>{{ page.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list> -->
+
+      <ion-list>
+        <div *ngFor="let page of pages">
+          <ion-item [routerLink]="page.url" routerDirection="root">
+            <ion-icon [name]="page.icon" slot="start"></ion-icon>
+            <ion-label>{{page.title}}</ion-label>
+          </ion-item>
+        </div>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-router-outlet id="content" main></ion-router-outlet>
+  
+  
+  
