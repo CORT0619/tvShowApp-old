@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { IonSegment } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -10,18 +12,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
+  registerForm: FormGroup;
+  showLoginForm = true;
+  showRegisterForm = false;
+  @ViewChild(IonSegment) segment: IonSegment;
 
   constructor(
     private loginService: LoginService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
+    this.segment.value = 'login';
     this.loginForm = this.fb.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.required] // add regex for validation
+    });
+
+    this.registerForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
+
+  // ngAfterViewInit() {
+  //   console.log(segment);
+  // }
 
   login() {
     const login = {
@@ -31,7 +50,38 @@ export class LoginPage implements OnInit {
 
     this.loginService.authenticate(login).subscribe((response) => {
       console.log('response ', response);
+      if (response) {
+        this.router.navigate(['/menu']);
+      }
+    }, (err) => {
+      // TODO: Implement error handling
+      console.log('err ', err);
     });
+  }
+
+  register() {
+    console.log('registering...');
+    const firstName = this.registerForm.controls['firstName'].value;
+    const lastName = this.registerForm.controls['lastName'].value;
+    const email = this.registerForm.controls['email'].value;
+    const password = this.registerForm.controls['password'].value;
+
+    const registration = {
+      firstName,
+      lastName,
+      email,
+      password
+    };
+  }
+
+  segmentChanged(e) {
+    if (this.segment.value === 'login') {
+      this.showLoginForm = true;
+      this.showRegisterForm = false;
+    } else {
+      this.showLoginForm = false;
+      this.showRegisterForm = true;
+    }
   }
 
 }

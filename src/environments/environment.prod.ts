@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   env: 'prod',
-  apiBase: 'https://cwilliams.dev/projects/tvshowapp/'
+  apiBase: 'https://tvshowapp.cwilliams.dev'
 };

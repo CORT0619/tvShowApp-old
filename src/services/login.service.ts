@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { ConfigService } from './config.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -14,7 +15,8 @@ export class LoginService {
   ) { }
 
   authenticate({ email, password }) {
-    const url = 'http://localhost:3000/api/firebase/login';
+    // const url = 'http://localhost:3000/api/firebase/login';
+    const url = `${environment.apiBase}/api/firebase/login`;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -22,11 +24,9 @@ export class LoginService {
       withCredentials: true
     };
 
-    return this.httpClient.post(url, { email, password }, httpOptions);
-      /*.pipe(
-        // tap(res => console.log('res ', res)),
-        // map(res => res),
+    return this.httpClient.post(url, { email, password }, httpOptions)
+      .pipe(
         catchError(this.config.handleError)
-      );*/
+      );
   }
 }

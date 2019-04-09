@@ -1,14 +1,41 @@
-.email {
-  // background: no-repeat url('../../assets/mail-envelope.png');
-}
+// app-login {
+:host {
+  .email {
+    // background: no-repeat url('../../assets/mail-envelope.png');
+  }
+  
+  // .password {
+  //   background: no-repeat url(../../assets/);
+  // }
 
-// .password {
-//   background: no-repeat url(../../assets/);
-// }
-ion-card-header {
-  text-align: center;
-}
+  // ion-card {
+  //   height: 20em;
+  // }
+  
+  // ion-card-header {
+  //   text-align: center;
+  // }
+  
+  // ion-card-subtitle {
+  //   color: #73737352;
+  // }
 
-ion-card-subtitle {
-  color: #73737352;
+  .form.register {
+    height: 30em;
+  }
+
+  .form {
+    height: 15em;
+    padding: 1em;
+
+    ion-button {
+      text-transform: unset;
+    }
+  }
+
+  ion-item[_ngcontent-c0].item.item-input.item-label.item-label-floating {
+    ion-label[position="floating"].sc-ion-label-md-h.label-floating.hydrated {
+      color: #B6B6B6;
+    }
+  }
 }

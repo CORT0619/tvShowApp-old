@@ -1,15 +1,22 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>login</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content padding>
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Login</ion-card-title>
-      <ion-card-subtitle>sdsfsfdfsdf</ion-card-subtitle>
-    </ion-card-header>
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="login">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="register">
+          <ion-label>Register</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <div class="form" *ngIf="showLoginForm">
       <form [formGroup]="loginForm">
         <ion-item>
           <!-- <ion-img src="assets/mail-envelope.png"></ion-img> -->
@@ -24,5 +31,33 @@
       
         <ion-button expand="block" strong="false" type="submit" routerDirection="forward" (click)="login()">Login</ion-button>
       </form>
+    </div>
+
+    <div class="form formGroup register" *ngIf="showRegisterForm">
+      <form [formGroup]="registerForm">
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input type="text" class="" alt="First Name" formControlName="firstName" aria-required="true" required="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input type="text" class="" alt="Last Name" formControlName="lastName" aria-required="true" required="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="text" class="" alt="Email" formControlName="email" aria-required="true" required="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="text" class="" alt="Password" formControlName="password" aria-required="true" required="true"></ion-input>
+        </ion-item>
+      </form>
+
+      <ion-button  expand="block" fill="outline" type="submit" (click)="register()">Sign Up</ion-button>
+      <ion-button expand="block" fill="clear" type="reset">Cancel</ion-button>
+    </div>
   </ion-card>
 </ion-content>
