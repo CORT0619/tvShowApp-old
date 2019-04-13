@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchComponent } from './search.component';
+import { ShowListComponent } from './show-list.component';
 import { IonicModule } from '@ionic/angular';
-import { ShowListModule } from '../show-list/show-list.module';
+import { PipesModule } from 'src/pipes/pipes.module';
 
 @NgModule({
   declarations: [
-    SearchComponent
+    ShowListComponent
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    PipesModule
   ],
   exports: [
-    SearchComponent
+    ShowListComponent
   ]
 })
-export class SearchModule { }
+export class ShowListModule { }

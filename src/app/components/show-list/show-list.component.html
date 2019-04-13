@@ -1,0 +1,9 @@
+<div class="shows">
+  <ion-list>
+    <div *ngFor="let show of shows" class="show__container">
+      <!-- <img [src]="show.banner" [alt]="''show."> -->
+      <p>{{ show.seriesName }}</p>
+      <p>{{ show.overview | slice:0:150 | overviewTransform }}</p>
+    </div>
+  </ion-list>
+</div>

@@ -9,5 +9,11 @@
   </ion-header>
   
   <ion-content padding>
-  
+    <form>
+      <ion-item>
+        <ion-input type="text" placeholder="Search for a tv show" (keyup.enter)="search($event.target)"></ion-input>
+      </ion-item>
+    </form>
+
+    <show-list *ngIf="shows && shows.length > 0" [shows]="shows"></show-list>
   </ion-content>

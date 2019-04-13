@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/services/search.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
+  shows: Array<ShowData>;
+  searchSubscription: Subscription;
 
-  constructor() { }
+  constructor(
+    private searchService: SearchService
+  ) { }
 
   ngOnInit() {
+  }
+
+  search(term) {
+    this.searchService.retrieveShowOverview(term.value).subscribe((response: Show) => {
+      console.log('show ', response);
+      this.shows = response.data;
+      term.value = '';
+      localStorage.setItem('shows', JSON.stringify(response.data));
+    });
   }
 
 }
