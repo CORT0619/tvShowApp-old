@@ -10,7 +10,7 @@ export interface ShowData {
   status: string;
 }
 
-interface Show {
+export interface Show {
   data: Array<ShowData>;
   error: '';
 }

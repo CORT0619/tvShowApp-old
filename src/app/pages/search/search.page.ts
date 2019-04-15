@@ -1,3 +1,4 @@
+import { ShowData, Show } from './../../../models/shows.model';
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/services/search.service';
 import { Subscription } from 'rxjs';
