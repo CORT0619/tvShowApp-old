@@ -15,7 +15,7 @@ export class MenuPage implements OnInit {
   ];
 
   constructor(
-    private menu: MenuController
+    public menu: MenuController
   ) { }
 
   ngOnInit() {

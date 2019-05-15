@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ShowListComponent } from './show-list.component';
 import { IonicModule } from '@ionic/angular';
 import { PipesModule } from 'src/pipes/pipes.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { PipesModule } from 'src/pipes/pipes.module';
   imports: [
     CommonModule,
     IonicModule,
-    PipesModule
+    PipesModule,
+    // BrowserAnimationsModule
   ],
   exports: [
     ShowListComponent

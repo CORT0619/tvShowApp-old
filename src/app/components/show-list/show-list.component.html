@@ -1,9 +1,16 @@
 <div class="shows">
   <ion-list>
-    <div *ngFor="let show of shows" class="show__container">
-      <!-- <img [src]="show.banner" [alt]="''show."> -->
-      <p>{{ show.seriesName }}</p>
-      <p>{{ show.overview | slice:0:150 | overviewTransform }}</p>
+    <div [@addShows]="shows && shows.length">
+      <div *ngFor="let show of shows" class="shows__container" (click)="selectedShow(show)">
+        <!-- <img [src]="show?.banner" [alt]="''show."> -->
+        <img [src]="show?.banner">
+        <div class="shows__info">
+          <p>{{ show.seriesName }}</p>
+          <p *ngIf="!fullOverviewVisible">{{ show.overview | slice:0:150 | overviewTransform }}</p>
+          <p *ngIf="fullOverviewVisible">{{ show.overview }}</p>
+        </div>
+        <div class="shows__arrow" (click)="showFullOverview()"></div>
+      </div>
     </div>
   </ion-list>
 </div>
