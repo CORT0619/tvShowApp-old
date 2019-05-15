@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
+import { IonicModule } from '@ionic/angular';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -8,9 +9,9 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
-    })
-    .compileComponents();
+      imports: [IonicModule],
+      declarations: [SearchComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

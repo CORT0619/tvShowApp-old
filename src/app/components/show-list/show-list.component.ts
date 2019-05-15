@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { ShowData } from '../../../models/shows.model';
 @Component({
   selector: 'show-list',
   templateUrl: './show-list.component.html',
@@ -8,10 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ShowListComponent implements OnInit {
   @Input() shows: Array<ShowData>;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     console.log('shows ', this.shows);
   }
-
 }

@@ -1,4 +1,4 @@
-interface ShowData {
+export interface ShowData {
   aliases: Array<string>;
   banner: string;
   firstAired: string;
@@ -10,7 +10,7 @@ interface ShowData {
   status: string;
 }
 
-interface Show {
+export interface Show {
   data: Array<ShowData>;
   error: '';
 }
