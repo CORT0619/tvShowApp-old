@@ -16,24 +16,39 @@ import {
   styleUrls: ['./show-list.component.scss'],
   animations: [
     trigger('addShows', [
-      transition('* => *', [ // each time the binding value changes
-        query(':leave', [
-          stagger(100, [
-            animate('0.5s', style({
-              opacity: 0,
-              transform: 'translate(20px, 0)'
-            }))
-          ])
-        ], { optional: true }),
-        query(':enter', [
-          style({ opacity: 0.1 }),
-          stagger(200, [
-            animate('1s', style({
-              transform: 'translate(0, 15px)',
-              opacity: 1
-          }))
-          ])
-        ])
+      transition('* => *', [
+        // each time the binding value changes
+        query(
+          ':leave',
+          [
+            stagger(100, [
+              animate(
+                '0.5s',
+                style({
+                  opacity: 0,
+                  transform: 'translate(20px, 0)'
+                })
+              )
+            ])
+          ],
+          { optional: true }
+        ),
+        query(
+          ':enter',
+          [
+            style({ opacity: 0.1 }),
+            stagger(200, [
+              animate(
+                '1s',
+                style({
+                  transform: 'translate(0, 15px)',
+                  opacity: 1
+                })
+              )
+            ])
+          ],
+          { optional: true }
+        )
       ])
     ])
   ]
@@ -55,5 +70,4 @@ export class ShowListComponent implements OnInit {
   showFullOverview() {
     this.fullOverviewVisible = !this.fullOverviewVisible;
   }
-
 }

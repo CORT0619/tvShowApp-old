@@ -1,4 +1,4 @@
-import { ShowData, Show } from './../../../models/shows.model';
+// import { ShowData, Show } from './../../../models/shows.model';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from 'src/services/search.service';
 import { Subscription } from 'rxjs';
