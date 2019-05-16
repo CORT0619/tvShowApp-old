@@ -10,10 +10,25 @@ import { ShowListModule } from 'src/app/components/show-list/show-list.module';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'search',
     component: SearchPage
   }
 ];
+
+// const routes: Routes = [
+//   {
+//     path: '',
+//     redirectTo: '/',
+//     pathMatch: 'full'
+//   },
+//   {
+//     path: '',
+//     component: SearchPage,
+//     children: [
+//       { path: 'show', loadChildren: '../display-show/display-show.module#DisplayShowPageModule' }
+//     ]
+//   }
+// ];
 
 @NgModule({
   imports: [

@@ -1,6 +1,30 @@
-.show__container {
+.shows {
+  // background: #f3dfc1;
+  ion-list {
+    background: transparent;
+    color: #FFF;
+  }
+}
+
+.shows__container {
   border-radius: 3px;
-  border: 1px solid rgba(197, 193, 193, 0.52);
-  padding: 5px 8px;
+  border: 2px solid rgb(255, 255, 255);
+  // padding: 5px 8px;
   margin-top: 25px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.shows__info {
+  padding: 5px 10px;
+}
+
+.shows__arrow {
+  text-align: center;
+}
+
+.shows__arrow::after {
+  // content: '∨';
+  // content: '▽';
+  // content: '▼';
+  content: '⛛';
 }

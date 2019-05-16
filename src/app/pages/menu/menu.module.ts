@@ -20,6 +20,7 @@ const routes: Routes = [
       { path: 'dash', loadChildren: '../dashboard/dashboard.module#DashboardPageModule' },
       { path: 'search', loadChildren: '../search/search.module#SearchPageModule' },
       { path: 'bookmarks', loadChildren: '../bookmarks/bookmarks.module#BookmarksPageModule' },
+      { path: 'display-show', loadChildren: '../display-show/display-show.module#DisplayShowPageModule' }
     ]
   },
 

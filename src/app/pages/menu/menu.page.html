@@ -1,20 +1,20 @@
 <ion-menu side="start" type="push" contentId="content">
-    <ion-header>
-      <ion-toolbar color="dark">
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
   
-    <ion-content>
-      <ion-list>
-        <div *ngFor="let page of pages">
-          <ion-item [routerLink]="page.url" routerDirection="root" (click)="menu.close()">
-            <ion-icon [name]="page.icon" slot="start"></ion-icon>
-            <ion-label>{{page.title}}</ion-label>
-          </ion-item>
-        </div>
-      </ion-list>
-    </ion-content>
+  <ion-content>
+    <ion-list>
+      <div *ngFor="let page of pages">
+        <ion-item [routerLink]="page.url" routerDirection="root" (click)="menu.close()">
+          <ion-icon [name]="page.icon" slot="start"></ion-icon>
+          <ion-label>{{page.title}}</ion-label>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
 </ion-menu>
   
 <ion-router-outlet id="content" main></ion-router-outlet>
