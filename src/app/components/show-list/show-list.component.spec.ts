@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShowListComponent } from './show-list.component';
+import { IonicModule } from '@ionic/angular';
+import { PipesModule } from 'src/pipes/pipes.module';
 
 describe('ShowListComponent', () => {
   let component: ShowListComponent;
@@ -8,9 +10,9 @@ describe('ShowListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowListComponent ]
-    })
-    .compileComponents();
+      imports: [IonicModule, PipesModule],
+      declarations: [ShowListComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

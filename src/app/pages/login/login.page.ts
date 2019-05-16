@@ -1,16 +1,15 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { LoginService } from '../../services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IonSegment } from '@ionic/angular';
+import { LoginService } from 'src/services/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  styleUrls: ['./login.page.scss']
 })
 export class LoginPage implements OnInit {
-
   loginForm: FormGroup;
   registerForm: FormGroup;
   showLoginForm = true;
@@ -21,7 +20,7 @@ export class LoginPage implements OnInit {
     private loginService: LoginService,
     private fb: FormBuilder,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.segment.value = 'login';
@@ -48,15 +47,18 @@ export class LoginPage implements OnInit {
       password: this.loginForm.controls['password'].value
     };
 
-    this.loginService.authenticate(login).subscribe((response) => {
-      console.log('response ', response);
-      if (response) {
-        this.router.navigate(['/menu']);
+    this.loginService.authenticate(login).subscribe(
+      response => {
+        console.log('response ', response);
+        if (response) {
+          this.router.navigate(['/menu']);
+        }
+      },
+      err => {
+        // TODO: Implement error handling
+        console.log('err ', err);
       }
-    }, (err) => {
-      // TODO: Implement error handling
-      console.log('err ', err);
-    });
+    );
   }
 
   register() {
@@ -83,5 +85,4 @@ export class LoginPage implements OnInit {
       this.showRegisterForm = true;
     }
   }
-
 }

@@ -42,7 +42,7 @@ export class ShowListComponent implements OnInit {
   @Input() shows: Array<ShowData>;
   fullOverviewVisible = false;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     console.log('shows ', this.shows);
