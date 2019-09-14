@@ -1,7 +1,8 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from 'src/services/search.service';
 import { Subscription } from 'rxjs';
-import { ShowData, Show } from 'src/models/shows.model';
+// import { ShowData, Show } from 'src/models/shows.model';
 
 @Component({
   selector: 'app-search',
