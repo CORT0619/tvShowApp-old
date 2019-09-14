@@ -1,5 +1,16 @@
 // app-login {
 :host {
+  .login__page {
+    &--grid {
+      height: 100%;
+    }
+
+    &--row {
+      height: 3.5em;
+      background-color: #000;
+    }
+  }
+
   .email {
     // background: no-repeat url('../../assets/mail-envelope.png');
   }

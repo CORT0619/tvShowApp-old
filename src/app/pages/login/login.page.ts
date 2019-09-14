@@ -1,8 +1,9 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IonSegment } from '@ionic/angular';
+import { IonSegment, ToastController } from '@ionic/angular';
 import { LoginService } from 'src/services/login.service';
+// import { ErrorToast } from 'src/app/components/error-toast/error-toast.component';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginPage implements OnInit {
   constructor(
     private loginService: LoginService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private toastController: ToastController
   ) {}
 
   ngOnInit() {
@@ -37,10 +39,6 @@ export class LoginPage implements OnInit {
     });
   }
 
-  // ngAfterViewInit() {
-  //   console.log(segment);
-  // }
-
   login() {
     const login = {
       email: this.loginForm.controls['email'].value,
@@ -56,6 +54,7 @@ export class LoginPage implements OnInit {
       },
       err => {
         // TODO: Implement error handling
+        this.showErrors(err);
         console.log('err ', err);
       }
     );
@@ -84,5 +83,13 @@ export class LoginPage implements OnInit {
       this.showLoginForm = false;
       this.showRegisterForm = true;
     }
+  }
+
+  async showErrors(errorMsg) {
+    const toast = await this.toastController.create({
+      message: errorMsg,
+      showCloseButton: true
+    });
+    toast.present();
   }
 }
