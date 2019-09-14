@@ -21,3 +21,21 @@ ion-content div.inner-scroll.scroll-y {
 .hamburger__menu {
   --color: #FFF;
 }
+
+/** ion-segment **/
+.sc-ion-segment-md-h {
+  --color-checked: var(--brown) !important;
+  --color-checked-disabled: var(--light-brown) !important;
+}
+
+// ion-segment {
+//   height: 20px;
+//   min-height: 20px;
+//   max-height: 20px;
+// }
+
+// ion-segment-button {
+//   height: 20px;
+//   min-height: 20px;
+//   max-height: 20px;
+// }

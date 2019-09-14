@@ -1,0 +1,10 @@
+[ { keyType: 'fanart',
+    resolution: [ '1920x1080', '1280x720' ],
+    subKey: [ 'graphical', 'text' ] },
+  { keyType: 'poster', resolution: [ '680x1000' ], subKey: [] },
+  { keyType: 'season',
+    resolution: [ '680x1000' ],
+    subKey: [ '3', '2', '4', '1', '0' ] },
+  { keyType: 'series',
+    resolution: [],
+    subKey: [ 'graphical', 'blank', 'text' ] } ]
