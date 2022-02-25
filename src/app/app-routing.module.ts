@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ShowInfoComponent } from './pages/show-info/show-info.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
-  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'register', loadChildren: './pages/create-login/create-login.module#CreateLoginPageModule' },
-  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
-  { path: 'display-show', loadChildren: './pages/display-show/display-show.module#DisplayShowPageModule' }
+  { path: 'login', component: LoginComponent },
+  { path: 'dash', component: DashboardComponent },
+  { path: 'show-info', component: ShowInfoComponent },
+  { path: 'profile', component: UserProfileComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

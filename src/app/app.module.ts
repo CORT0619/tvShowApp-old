@@ -1,43 +1,26 @@
-import { ErrorToastModule } from './components/error-toast/error-toast.module';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy, Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SearchService } from 'src/services/search.service';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ShowInfoComponent } from './pages/show-info/show-info.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
-  ],
-  entryComponents: [
+    AppComponent,
+    LoginComponent,
+    ShowInfoComponent,
+    UserProfileComponent,
+    HeaderComponent
   ],
   imports: [
-    ErrorToastModule,
     BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    // Platform
+    AppRoutingModule
   ],
-  providers: [
-    // ErrorToastModule,
-    StatusBar,
-    SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SearchService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
