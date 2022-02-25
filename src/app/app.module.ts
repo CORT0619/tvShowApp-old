@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ShowInfoComponent } from './pages/show-info/show-info.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { HeaderComponent } from './components/header/header.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     ShowInfoComponent,
     UserProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
