@@ -8,6 +8,11 @@ import { ShowInfoComponent } from './pages/show-info/show-info.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AuthModule } from '@auth0/auth0-angular';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+// import dotenv from 'dotenv/config';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +21,17 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     ShowInfoComponent,
     UserProfileComponent,
     HeaderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule.forRoot({
+      domain: '',
+      clientId: ''
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

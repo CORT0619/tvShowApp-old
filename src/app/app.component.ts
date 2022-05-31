@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tvshowapp';
+  currentRoute: string = '';
+
+  constructor(
+    private router: Router
+  ) {
+    router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.url.toString();
+      }
+    });
+  }
+
+
 }
