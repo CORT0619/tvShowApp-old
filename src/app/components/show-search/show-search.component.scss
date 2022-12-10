@@ -22,6 +22,8 @@
 .show-results li {
   display: flex;
   padding: 0.5rem 0 0.5rem;
+  border-bottom: 0.01em solid #cdc3c357;
+  cursor: pointer;
 
   & img {
     max-width: 2em;
@@ -30,5 +32,7 @@
 }
 
 .show-details {
-  display: flex;
+  &--name {
+    font-weight: bold;
+  }
 }

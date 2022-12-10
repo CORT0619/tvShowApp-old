@@ -15,6 +15,7 @@ export class ShowSearchComponent implements OnInit, OnDestroy {
   model = {
     tvShow: ''
   };
+  img = 'https://via.placeholder.com/150';
 
   constructor(
     private showService: ShowsService
