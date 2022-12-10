@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { /*ActivatedRoute, NavigationEnd,*/ Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,8 @@ export class AppComponent {
   constructor(
     private router: Router
   ) {
-    router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.currentRoute = event.url.toString();
-      }
-    });
+    this.currentRoute = this.router.url;
+    console.log(this.currentRoute);
   }
 
 
