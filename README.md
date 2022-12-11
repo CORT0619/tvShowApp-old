@@ -1,27 +1,18 @@
 # Tvshowapp
+The purpose of this application is to allow users to search for and get detailed information about tv shows as well as track episodes of a tv show that they've watched.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+## Getting Started
+1. Use the command `git clone https://github.com/CORT0619/tvShowApp.git` to clone the repository
+2. Navigate to the tvShowApp and then the frontend directory, then install and run the command `npm install` in order to install project dependencies
+3. Once dependencies have been installed run the command `npm start` in the command line
+4. After the message 'Compiled successfully.' shows in the command line open a new browser window and navigate to 'localhost:4200'
+5. In a separate file explorer window navigate to the tvShowApp and then the backend directory, then install project dependencies by running the command `npm install`
+6. Once dependencies have completed installation run the command `npm devStart` to get server up and running.
+7. Your done, please have fun exploring the app!
 
-## Development server
+## Contributions
+In order to contribute to this project please make a pull request and please reach out to Crystal at Crystal@trinitytechsupport.com.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tech
+- Angular v12
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

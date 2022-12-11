@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+- "16.17.0"
+
+branches:
+  only:
+    - master
+
+before_install:
+ - npm -v
+
+install:
+  - npm install -g @angular/cli
+  - npm install
+
+script:
+  - npm run build
+
+deploy:
+  provider: s3
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key: $SECRET_ACCESS_KEY
+  bucket: $BUCKET
+  skip_cleanup: true
+  local_dir: ./dist/tvshowapp
+  on:
+    branch: master

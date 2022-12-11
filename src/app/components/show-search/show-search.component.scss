@@ -1,0 +1,38 @@
+.form-group {
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 0.25em;
+  padding: 0.5em 0.25em;
+  color: #3e3b3b;
+  max-width: 35em;
+
+  input {
+    padding-left: 0.25em;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+.show-results {
+  margin-left: 0.5rem;
+}
+
+.show-results li {
+  display: flex;
+  padding: 0.5rem 0 0.5rem;
+  border-bottom: 0.01em solid #cdc3c357;
+  cursor: pointer;
+
+  & img {
+    max-width: 2em;
+    padding-right: 0.25rem
+  }
+}
+
+.show-details {
+  &--name {
+    font-weight: bold;
+  }
+}

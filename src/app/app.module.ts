@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ShowInfoComponent } from './pages/show-info/show-info.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
-import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { AuthModule } from '@auth0/auth0-angular';
+// import { AuthModule } from '@auth0/auth0-angular';
 import { HomeComponent } from './pages/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { ComponentModule } from './components/component.module';
 // import dotenv from 'dotenv/config';
 
 
@@ -20,18 +21,19 @@ import { FooterComponent } from './components/footer/footer.component';
     LoginComponent,
     ShowInfoComponent,
     UserProfileComponent,
-    HeaderComponent,
     PageNotFoundComponent,
-    HomeComponent,
-    FooterComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule.forRoot({
-      domain: '',
-      clientId: ''
-    })
+    HttpClientModule,
+    DashboardModule,
+    ComponentModule
+    // AuthModule.forRoot({
+    //   domain: '',
+    //   clientId: ''
+    // })
   ],
   providers: [],
   bootstrap: [AppComponent]

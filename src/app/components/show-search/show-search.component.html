@@ -1,0 +1,21 @@
+<form #searchForm="ngForm">
+  <div class="form-group">
+    <span class="material-icons">search</span>
+    <input type="text" name="tvShow" id="tvShow" placeholder="Search" [(ngModel)]="model.tvShow" (keypress)="onKey($event)" required>
+  </div>
+</form>
+<!-- <div> -->
+<ul class="show-results">
+  <li *ngFor="let result of showResults" class="show-details" routerLink="/show-details">
+    <img [src]="result.show.image?.medium || img" [alt]="result.show.name">
+    <div class="show-details">
+      <p class="show-details--name">
+        {{result.show.name}}
+        <span>({{result.show.premiered | date: 'YYYY' }})</span>
+      </p>
+      <p class="show-details--status">{{result.show.status}}</p>
+    </div>
+
+  </li>
+</ul>
+<!-- </div> -->
