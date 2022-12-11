@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import TvShow from 'src/app/models/tvshow.model';
 import { ShowsService } from 'src/app/services/shows.service';
@@ -18,7 +19,8 @@ export class ShowSearchComponent implements OnInit, OnDestroy {
   img = 'https://via.placeholder.com/150';
 
   constructor(
-    private showService: ShowsService
+    private showService: ShowsService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,12 @@ export class ShowSearchComponent implements OnInit, OnDestroy {
         this.showResults = show.shows;
         console.log(this.showResults);
       });
+  }
+
+  goToShow(show: TvShow) {
+    const showId = show ? show.show.id : null;
+    localStorage.setItem('selectedShow', JSON.stringify(show));
+    this.router.navigate(['/show-details', showId]);
   }
 
   ngOnDestroy(): void {
