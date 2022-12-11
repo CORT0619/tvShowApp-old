@@ -10,8 +10,8 @@ before_install:
  - npm -v
 
 install:
-  - npm install -g @angular/cli
   - npm install
+  - npm install -g @angular/cli
 
 script:
   - npm run build
