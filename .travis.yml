@@ -10,7 +10,7 @@ before_install:
  - npm -v
 
 install:
-  - npm install
+  - npm install --legacy-peer-deps
   - npm install -g @angular/cli
 
 script:
