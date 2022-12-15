@@ -11,7 +11,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dash', component: DashboardComponent/*, canActivate: [AuthGuard]*/ },
-  { path: 'show-details', component: ShowInfoComponent/*, canActivate: [AuthGuard]*/ },
+  { path: 'show-details/:id', component: ShowInfoComponent/*, canActivate: [AuthGuard]*/ },
   { path: 'profile', component: UserProfileComponent/*, canActivate: [AuthGuard]*/ },
   { path: '', component: HomeComponent },
   { path: '**', component: PageNotFoundComponent }

@@ -6,14 +6,16 @@
 </form>
 <!-- <div> -->
 <ul class="show-results">
-  <li *ngFor="let result of showResults" class="show-details" routerLink="/show-details">
+  <!-- <li *ngFor="let result of showResults" class="show-details" (click)="goToShow(result)" routerLink="/show-details"> -->
+  <li *ngFor="let result of showResults" class="show-details" (click)="goToShow(result)">
     <img [src]="result.show.image?.medium || img" [alt]="result.show.name">
     <div class="show-details">
       <p class="show-details--name">
         {{result.show.name}}
         <span>({{result.show.premiered | date: 'YYYY' }})</span>
       </p>
-      <p class="show-details--status">{{result.show.status}}</p>
+      <!-- <p class="show-details--status" [innerHTML]="">{{result.show.status}}</p> -->
+      <p class="show-details--status" [innerHTML]="result.show?.summary"></p>
     </div>
 
   </li>
