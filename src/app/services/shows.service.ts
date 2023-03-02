@@ -17,7 +17,7 @@ export class ShowsService {
   ) { }
 
   searchForShows(show: string): Observable<SearchShowResults> {
-    return this.httpClient.get<SearchShowResults>(`${environment.apiUrl}/shows/search/${show}`)
+    return this.httpClient.get<SearchShowResults>(`${environment.apiUrl}/shows/search?show=${show}`)
     .pipe(catchError(this.handleError))/*.toPromise<SearchShowResults>()*/;
   }
 
