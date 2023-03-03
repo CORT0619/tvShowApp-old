@@ -26,15 +26,17 @@ export class ShowSearchComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  onKey(e: Event) {
+  onKey(e: KeyboardEvent) {
     this.showResults = [];
-    // console.log('event ', e);
-    this.tvShowSubscription = this.showService.searchForShows(this.model.tvShow)
+    if (e.key.toLowerCase() === 'enter') {
+      console.log(this.model.tvShow);
+      this.tvShowSubscription = this.showService.searchForShows(this.model.tvShow)
       .subscribe((show) => {
         console.log('show ', show);
         this.showResults = show.shows;
         console.log(this.showResults);
       });
+    }
   }
 
   goToShow(show: TvShow) {
