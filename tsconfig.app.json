@@ -6,7 +6,12 @@
     "types": []
   },
   "files": [
+<<<<<<< HEAD
     "src/main.ts"
+=======
+    "src/main.ts",
+    "src/polyfills.ts"
+>>>>>>> a1909c00648116c0362cba91a10996d960c92395
   ],
   "include": [
     "src/**/*.d.ts"
